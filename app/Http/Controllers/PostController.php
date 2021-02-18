@@ -147,7 +147,10 @@ class PostController extends Controller
     {
         try {
 
-            $data = Post::count();
+            $data['all'] = Post::count();
+            $data['publish'] = Post::where('status','=',1)->count();
+            $data['draft'] = Post::where('status','=',1)->count();
+
         } catch (\Exception $e) {
 
             Log::channel('errors')->debug($e->errorInfo[2]);
@@ -162,7 +165,7 @@ class PostController extends Controller
             'success' => true,
             'message' => 'Data loaded!',
             'errors'    => null,
-            'data' => strval($data)
+            'data' => $data
         ], 200);
     }
 
