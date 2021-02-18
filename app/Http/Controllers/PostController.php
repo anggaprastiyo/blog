@@ -151,6 +151,7 @@ class PostController extends Controller
             $data['publish'] = Post::where('status','=',1)->count();
             $data['draft'] = Post::where('status','=',1)->count();
             $data['utama'] = Post::where('category','=',1)->count();
+//             $data['draft'] = Post::where('status','=',1)->count();
 
         } catch (\Exception $e) {
 
