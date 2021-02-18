@@ -149,7 +149,7 @@ class PostController extends Controller
 
             $data['all'] = Post::count();
             $data['publish'] = Post::where('status','=',1)->count();
-            $data['draft'] = Post::where('status','=',1)->count();
+//             $data['draft'] = Post::where('status','=',1)->count();
 
         } catch (\Exception $e) {
 
