@@ -156,7 +156,7 @@ class PostController extends Controller
             Log::channel('errors')->debug($e->errorInfo[2]);
             return response()->json([
                 'success' => false,
-                'message' => 'Wah, Salah Nih!',
+                'message' => 'Loh Salah Iki!',
                 'errors'    => $e->errorInfo[2]
             ], 500);
         }
